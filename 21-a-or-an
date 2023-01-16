@@ -7,5 +7,5 @@ public String aOrAn(String word) {
         article = 'an';
     } else article = 'a';
 
-    return article + word;
+    return article + ' ' + word;
 }
