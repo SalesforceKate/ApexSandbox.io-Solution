@@ -1,0 +1,6 @@
+public String nameFromEmail(String email) {
+    //code here
+    String firstName = email.SubstringBefore('.').toLowerCase().capitalize();
+    String lastName = email.SubstringBetween('.','@').toLowerCase().capitalize();
+    return firstName + ' ' + lastName;
+}
