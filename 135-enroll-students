@@ -1,0 +1,22 @@
+public void enrollStudents(List<String> emails, String className) {
+    // SOQL for student IDs
+    List<apxio__Student__c> students = [SELECT Id 
+                                          FROM apxio__Student__c
+                                         WHERE apxio__Email__c = :emails];
+    // SOQL for class Ids
+    List<apxio__Class__c> classes = [SELECT Id
+                                       FROM apxio__Class__c
+                                      WHERE Name = :className];
+    // create list to hold enrollments
+    List<apxio__Class_Enrollment__c> enrollments = new List<apxio__Class_Enrollment__c>();
+
+    // populate the enrollments list
+    for(Integer i =0; i < emails.size(); i++){
+        apxio__Class_Enrollment__c e = new apxio__Class_Enrollment__c();
+        e.apxio__Student__c = students[i].Id;
+        e.apxio__Offered_Class__c = classes[i].Id;
+        enrollments.add(e);
+    }
+
+    insert enrollments;
+}
