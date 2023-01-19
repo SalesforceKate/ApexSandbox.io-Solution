@@ -1,0 +1,23 @@
+public String changeTimeFormat(String strTime) {
+    List<String> listTime = strTime.split(':');
+    String amOrPm;
+    String minutes = listTime[1];
+    Integer intHours = Integer.valueOf(listTime[0]);
+    String hours;
+    if (listTime[0]=='00'){
+        hours = '12';
+        amOrPm = 'AM';
+    } else if (intHours <=12){
+        hours = listTime[0];
+        if (intHours==12){
+            amOrPm = 'PM';
+        } else amOrPm = 'AM';
+    } else {
+        if ((intHours-12) < 10){
+            hours = '0' + String.valueOf(intHours-12);
+        } else hours = String.valueOf(intHours-12);
+        amOrPm = 'PM';
+    }
+    
+    return hours + ':' + minutes + ' ' + amOrPM;
+}
