@@ -4,9 +4,11 @@ public Integer nextPrime(Integer num) {
 
     do {
         prime = isPrime(test);
+        if(prime){
+            return test;
+        }
         test = test +1;
     } while (prime==false);
-    return test;
 }
 
 public Boolean isPrime(Integer num) {
