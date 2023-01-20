@@ -1,12 +1,7 @@
 public Integer nextPrime(Integer num) {
-    Integer test;
-    Boolean prime = false;
-
-    do {
-        test = test +1;
-        prime = isPrime(test);
-    } while (prime==false);
-    return test;
+    if (num < 2) return 2; 
+    while (!isPrime(++num));
+    return num;
 }
 
 public Boolean isPrime(Integer num) {
