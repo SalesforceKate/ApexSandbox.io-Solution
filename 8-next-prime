@@ -1,13 +1,10 @@
 public Integer nextPrime(Integer num) {
-    Integer test = num+1;
+    Integer test;
     Boolean prime = false;
 
     do {
-        prime = isPrime(test);
-        if(prime){
-            return test;
-        }
         test = test +1;
+        prime = isPrime(test);
     } while (prime==false);
 }
 
