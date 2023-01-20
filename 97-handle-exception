@@ -4,8 +4,8 @@ public String divide(Integer a, Integer b){
         Integer result = a/b;
         Integer remainder = Math.mod(a,b);
         If (remainder==0){
-            return result;
-        } else return result + ' with a remainder of ' + remainder;
+            return String.valueOf(result);
+        } else return String.valueOf(result) + ' with a remainder of ' + String.valueOf(remainder);
     } catch(Exception e) {
         return e.getMessage();
     }
