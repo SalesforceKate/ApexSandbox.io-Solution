@@ -6,6 +6,7 @@ public Integer nextPrime(Integer num) {
         test = test +1;
         prime = isPrime(test);
     } while (prime==false);
+    return test;
 }
 
 public Boolean isPrime(Integer num) {
