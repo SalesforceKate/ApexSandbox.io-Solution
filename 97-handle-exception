@@ -1,11 +1,7 @@
 public String divide(Integer a, Integer b){
     //code here
     try {
-        Integer result = a/b;
-        Integer remainder = Math.mod(a,b);
-        If (remainder==0){
-            return String.valueOf(result);
-        } else return String.valueOf(result) + ' with a remainder of ' + String.valueOf(remainder);
+        return String.valueOf(a/b);
     } catch(Exception e) {
         return e.getMessage();
     }
