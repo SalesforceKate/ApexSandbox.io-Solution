@@ -1,0 +1,17 @@
+public Integer nextPrime(Integer num) {
+    Integer test = num + 1;
+
+    do {
+        isPrime(test);
+        test++;
+    } while (!isPrime(test));
+    return test;
+}
+
+public Boolean isPrime(Integer num) {
+    Boolean prime = true;
+    for (Integer i=2; i < num-1; i++){
+        if (Math.mod(num,i)==0) prime = false;
+    }
+    return prime;
+}
