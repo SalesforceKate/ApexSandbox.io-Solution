@@ -1,0 +1,12 @@
+public String divide(Integer a, Integer b){
+    //code here
+    try {
+        Integer result = a/b;
+        Integer remainder = Math.mod(a,b);
+        If (remainder==0){
+            return result;
+        } else return result + ' with a remainder of ' + remainder;
+    } catch(Exception e) {
+        return e.getMessage();
+    }
+}
