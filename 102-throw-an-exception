@@ -1,7 +1,7 @@
 public List<Account> checkAccounts(List<Account> accounts)
 {
     // if list is null
-    if (accounts.isEmpty()) throw new IllegalArgumentException ('accounts should not be null');
+    if (accounts==null) throw new IllegalArgumentException ('accounts should not be null');
     
     // check all accounts for billing city
     for(Integer i=0; i < accounts.size(); i++){
