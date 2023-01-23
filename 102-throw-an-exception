@@ -1,0 +1,16 @@
+public List<Account> checkAccounts(List<Account> accounts)
+{
+    // if list is null
+    if (accounts.isEmpty()) throw new IllegalArgumentException ('accounts should not be null');
+    
+    // check all accounts for billing city
+    for(Integer i=0; i < accounts.size(); i++){
+        if(acc?.BillingCity == null){
+            throw new AccountException('Invalid BillingCity');
+        }
+    }
+    return accounts;
+}
+
+//do not remove the following custom-defined exception
+public class AccountException extends Exception {}
