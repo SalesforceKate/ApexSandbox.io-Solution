@@ -5,7 +5,7 @@ public List<Account> checkAccounts(List<Account> accounts)
     
     // check all accounts for billing city
     for(Integer i=0; i < accounts.size(); i++){
-        if(acc?.BillingCity == null){
+        if(accounts[i]?.BillingCity == null){
             throw new AccountException('Invalid BillingCity');
         }
     }
