@@ -1,0 +1,27 @@
+public Boolean isKeyAccount(Account a) {
+    Boolean keyAcct=false;
+        
+        switch on a.Industry {
+        when 'Banking' {
+            if (a.AnnualRevenue >=600000){
+                keyAcct=true;
+            }
+        }	
+        when 'Technology' {
+            if (a.AnnualRevenue >=800000){
+                keyAcct=true;
+            }
+        }
+        when 'Retail' {
+            if (a.AnnualRevenue >=2000000){
+                keyAcct=true;
+            }
+        }
+        when else {
+            if (a.AnnualRevenue >=500000){
+                keyAcct=true;
+            }
+        }
+    }
+        return keyAcct;
+}
