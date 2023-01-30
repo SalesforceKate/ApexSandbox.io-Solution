@@ -2,18 +2,18 @@ public Boolean companionPlants(List<String> plants) {
     //code here
     Boolean companion;
     for(Integer i=0; i < plants.size()-1; i++){
-        if (plant[i]=='onions' && (plant[i+1]=='lettuce' || 
-                                plant[i+1]=='carrots' || 
-                                plant[i+1]=='tomatoes')){
+        if (plants[i]=='onions' && (plants[i+1]=='lettuce' || 
+                                plants[i+1]=='carrots' || 
+                                plants[i+1]=='tomatoes')){
             companion = true;
-        } else if (plant[i]=='lettuce' && (plant[i+1]=='cucumbers' || 
-                                        plant[i+1]=='onions' )){
+        } else if (plants[i]=='lettuce' && (plants[i+1]=='cucumbers' || 
+                                        plants[i+1]=='onions' )){
             companion =  true;
-        } else if (plant[i]=='cucumbers' && plant[i+1]=='lettuce'){
+        } else if (plants[i]=='cucumbers' && plants[i+1]=='lettuce'){
             companion =  true;
-        } else if (plant[i]=='carrots' && plant[i+1]=='onions'){
+        } else if (plants[i]=='carrots' && plants[i+1]=='onions'){
             companion =  true;
-        } else if (plant[i]=='tomatoes' && plant[i+1]=='onions'){
+        } else if (plants[i]=='tomatoes' && plants[i+1]=='onions'){
             companion =  true;
         } else companion =  false;
     }
