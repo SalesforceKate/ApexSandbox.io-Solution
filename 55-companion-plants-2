@@ -1,5 +1,6 @@
 public Boolean companionPlants(List<String> plants) {
     //code here
+    if(plants==null || plants.size()==1) return false;
     Boolean companion;
     for(Integer i=0; i < plants.size()-1; i++){
         if (plants[i]=='onions' && (plants[i+1]=='lettuce' || 
