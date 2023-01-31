@@ -7,11 +7,9 @@ public boolean isSorted(List<Integer> numbers) {
         if (numbers[n] == numbers[n+1]) {
             continue;
         } else if (numbers[n] < numbers[n+1]){
-            sortAsc = true;
             sortDes = false;
         } else if (numbers[n] > numbers[n+1]){
             sortAsc = false;
-            sortDes = true;
         }
     }
     return (sortAsc || sortDes);
