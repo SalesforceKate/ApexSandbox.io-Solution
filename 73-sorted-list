@@ -1,6 +1,6 @@
 public boolean isSorted(List<Integer> numbers) {
     //code here
-    if (numbers.size < 3) return true;
+    if (numbers.size() < 3) return true;
     boolean sortAsc = false;
     boolean sortDes = false;
     for (Integer n = 0; n < numbers.size()-1; n++){
