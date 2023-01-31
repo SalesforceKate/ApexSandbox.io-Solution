@@ -1,8 +1,8 @@
 public boolean isSorted(List<Integer> numbers) {
     //code here
     if (numbers.size() < 3) return true;
-    boolean sortAsc = false;
-    boolean sortDes = false;
+    boolean sortAsc = true;
+    boolean sortDes = true;
     for (Integer n = 0; n < numbers.size()-1; n++){
         if (numbers[n] == numbers[n+1]) {
             continue;
