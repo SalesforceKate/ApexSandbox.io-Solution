@@ -8,4 +8,5 @@ public Boolean containsDuplicates(List<Integer> nums) {
             dupes = true;
         } else unique.add(n);
     }
+    return dupes;
 }
