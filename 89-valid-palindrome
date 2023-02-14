@@ -1,0 +1,21 @@
+public Boolean isPalindrome(String str){
+    //code here
+    String lowercase = str.toLowerCase();
+    // strip non alpha numeric characters
+    Pattern nonAlphanumeric = Pattern.compile('[^a-zA-Z0-9]');
+    Matcher matcher = nonAlphanumeric.matcher(lowercase);
+    String toEval = matcher.replaceAll(''); 
+    // convert string to array
+    List<String> arr = toEval.split('');
+    // check for palindrome
+    Boolean isPalin = true;
+    Integer j = arr.size()-1;
+    for (Integer i=0; i < arr.size(); i++){
+        if(arr[i]!=arr[j]){
+            isPalin = false;
+            break;
+        }
+        if (j!=0) j-=1;
+    }
+    return isPalin;
+}
