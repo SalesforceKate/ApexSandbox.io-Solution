@@ -1,0 +1,11 @@
+public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2){
+    // solution 
+    List<Integer> result = new List<Integer>;
+    for(Integer i : list1){
+        result.add(i);
+    }
+    for(Integer j : list2){
+        result.add(i);
+    }
+    return result.sort()
+}
