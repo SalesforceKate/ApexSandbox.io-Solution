@@ -1,5 +1,5 @@
 public boolean isAnagram(String s1, String s2) {
-if (s1.length() !== s2.length()) {
+if (s1.length() != s2.length()) {
     return false;
 }
 
@@ -9,7 +9,7 @@ const arr2 = s2.split('').sort();
 
 // Compare the sorted arrays
 for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
+    if (arr1[i] != arr2[i]) {
       return false;
     }
 }
