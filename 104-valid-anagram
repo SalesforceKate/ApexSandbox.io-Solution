@@ -4,8 +4,8 @@ if (s1.length() != s2.length()) {
 }
 
 // Convert the strings to arrays of characters and sort them
-const arr1 = s1.split('').sort();
-const arr2 = s2.split('').sort();
+List<String> arr1 = s1.split('').sort();
+List<String> arr2 = s2.split('').sort();
 
 // Compare the sorted arrays
 for (let i = 0; i < arr1.length; i++) {
