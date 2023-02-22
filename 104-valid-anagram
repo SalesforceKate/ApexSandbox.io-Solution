@@ -1,18 +1,20 @@
 public boolean isAnagram(String s1, String s2) {
-if (s1.length() != s2.length()) {
-    return false;
-}
-
-// Convert the strings to arrays of characters and sort them
-List<String> arr1 = s1.split('').sort();
-List<String> arr2 = s2.split('').sort();
-
-// Compare the sorted arrays
-for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] != arr2[i]) {
-      return false;
+    if (s1.length() != s2.length()) {
+        return false;
     }
-}
 
-return true;
+    // Convert the strings to arrays of characters and sort them
+    List<String> arr1 = s1.split('');
+    arr1.sort();
+    List<String> arr2 = s2.split('');
+    arr2.sort();
+
+    // Compare the sorted arrays
+    for (Integer i = 0; i < arr1.size(); i++) {
+        if (arr1[i] != arr2[i]) {
+            return false;
+        }
+    }
+
+r   eturn true;
 }
