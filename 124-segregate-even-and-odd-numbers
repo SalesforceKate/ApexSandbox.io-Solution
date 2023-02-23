@@ -1,0 +1,23 @@
+public static void segregateEvenOdd(List<Integer> numbers){
+    Integer left = 0;
+    Integer right = numbers.size() - 1;
+
+    while (left < right) {
+        while (math.mod(numbers[left], 2) == 0 && left < right) {
+            left++;
+    }
+
+    while (math.mod(numbers[right], 2) != 0 && left < right) {
+        right--;
+    }
+
+    if (left < right) {
+        Integer temp = numbers[left];
+        numbers[left] = numbers[right];
+        numbers[right] = temp;
+        left++;
+        right--;
+    }
+    }
+
+}
