@@ -1,0 +1,24 @@
+public Boolean isSubSequence(String s1, String s2){
+    // Initialize variables
+    Integer goal = s1.length();
+    Integer matches = 0;
+    Integer lastMatch = 0;
+    // split strings into lists
+    List<String> arr1 = s1.split('');
+    List<String> arr2 = s2.split('');
+    //system.debug(arr1 + ' and ' + arr2);
+    // loop through to find matches
+    for (Integer i = 0; i < arr1.size(); i++){
+        for (Integer j = 0; j < arr2.size(); j++){
+            if((arr1[i]==arr2[j]) && (j >= lastMatch)){
+                matches++;
+                lastMatch = j;
+                break;
+            }
+        }
+    }
+    if (matches == goal){
+        return true;
+    } else return false;
+
+}
