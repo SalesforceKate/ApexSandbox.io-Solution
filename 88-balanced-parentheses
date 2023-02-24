@@ -1,0 +1,38 @@
+public Boolean isValid(String s){
+    
+        List<String> stack = new List<String>();
+        List<String> open = new List<String>();
+        List<String> close = new List<String>();
+        
+        Map<String, String> brackets = new Map<String, String>();
+        brackets.put('(', ')');
+        brackets.put('{', '}');
+        brackets.put('[', ']');
+        
+
+  		for (Integer i = 0; i < s.length(); i++) {
+            String c = s.mid(i, 1);
+            if (brackets.ContainsKey(c)) {
+                open.add(c);
+            } else close.add(c);
+            
+            
+            /*
+    		String c = s.mid(i, 1);
+			system.debug('c = ' + c);
+            if (brackets.ContainsKey(c)) {
+                stack.add(c);
+                system.debug('stack (add) = ' + stack);
+            } else {
+                String top = stack.remove(stack.size()-1);
+                system.debug('stack (rm) = ' + stack);
+    
+            if (c != brackets.get(top)) {
+               System.debug('false');
+            }
+            } */
+  		}
+		
+        system.debug('Opens: ' + open); // (, [, {
+        system.debug('Closes: ' + close); // }, ], ), )
+}
