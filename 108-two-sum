@@ -1,15 +1,15 @@
 public static List<Integer> twoSum(List<Integer> nums, Integer target) {
-     //code here
+    Integer complement;
+    List<Integer> numList = new List<Integer>();
     List<Integer> result = new List<Integer>();
-    for(Integer i =0; i < nums.size(); i++){
-        for(Integer j =nums.size()-1; j>=0; j--){
-            if (nums[i] + nums[j]==target){
-                result.add(i);
-                result.add(j);
-                break;
-            }
-        }
-        if(result.size()==2) break;
+    
+    for (Integer i = 0; i < nums.size(); i++) {
+    complement = target - nums[i];
+    if (numList.contains(complement)) {
+        result.add(numList.indexOf(complement));
+        result.add(i);
+        break;
+    } else numList.add(nums[i]);
     }
     
     return result;
