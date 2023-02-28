@@ -15,7 +15,7 @@ public List<Account> getAccounts(List<Account> accounts) {
     return accounts;
 }
 // write extra class here 
-public class AccountsWrapper implements Comparable {
+public class AccountWrapper implements Comparable {
 
     public Account accty;
     
