@@ -3,21 +3,21 @@ public List<Account> getAccounts(List<Account> accounts) {
     if(accounts == null) return null;
     AccountWrapper[] accList=new List<AccountWrapper>();
 
-    for(Account acc:accounts){
-        accList.add(new AccountWrapper(acc));
+    for(Account a:accounts){
+        accList.add(new AccountWrapper(a));
     }
     accList.sort();
     accounts.clear();
 
     for(AccountWrapper a:accList){
-        accounts.add(a.account);
+    accounts.add(a.account);
     }
     return accounts;
 }
 // write extra class here 
 public class AccountWrapper implements Comparable {
 
-    public Account accty;
+    public Account account;
     
     // Constructor
     public AccountWrapper(Account ac) {
@@ -27,7 +27,7 @@ public class AccountWrapper implements Comparable {
     		ex.setMessage('Account argument cannot be null'); 
     		throw ex;
     	}
-        accty = ac;
+        account = ac;
     }
     
     // Compare accts based on the annual revenue amount.
@@ -37,19 +37,19 @@ public class AccountWrapper implements Comparable {
         
         // The return value of 0 indicates that both elements are equal.
         Integer returnValue = 0;
-        if ((accty.AnnualRevenue == null) && (compareToAccty.accty.AnnualRevenue == null)) {
+        if ((account.AnnualRevenue == null) && (compareToAccty.account.AnnualRevenue == null)) {
             // both wrappers have null AnnualRevenue
             returnValue = 0;
-        } else if ((accty.AnnualRevenue == null) && (compareToAccty.accty.AnnualRevenue != null)){
+        } else if ((account.AnnualRevenue == null) && (compareToAccty.account.AnnualRevenue != null)){
             // nulls-first implementation
             returnValue = -1;
-        } else if ((accty.AnnualRevenue != null) && (compareToAccty.accty.AnnualRevenue == null)){
+        } else if ((account.AnnualRevenue != null) && (compareToAccty.account.AnnualRevenue == null)){
             // nulls-first implementation
             returnValue = 1;
-        } else if (accty.AnnualRevenue > compareToAccty.accty.AnnualRevenue) {
+        } else if (account.AnnualRevenue > compareToAccty.account.AnnualRevenue) {
             // Set return value to a positive value.
             returnValue = 1;
-        } else if (accty.AnnualRevenue < compareToAccty.accty.AnnualRevenue) {
+        } else if (account.AnnualRevenue < compareToAccty.account.AnnualRevenue) {
             // Set return value to a negative value.
             returnValue = -1;
         } 
