@@ -1,0 +1,58 @@
+public List<Account> getAccounts(List<Account> accounts) {
+    // code here
+    if(accounts == null) return null;
+    AccountWrapper[] accList=new List<AccountWrapper>();
+
+    for(Account acc:accounts){
+        accList.add(new AccountWrapper(acc));
+    }
+    accList.sort();
+    accounts.clear();
+
+    for(AccountWrapper a:accList){
+        accounts.add(a.account);
+    }
+    return accounts;
+}
+// write extra class here 
+public class AccountsWrapper implements Comparable {
+
+    public Account accty;
+    
+    // Constructor
+    public AccountWrapper(Account ac) {
+    	// Guard against wrapping a null 
+    	if(ac == null) {
+    		Exception ex = new NullPointerException();
+    		ex.setMessage('Account argument cannot be null'); 
+    		throw ex;
+    	}
+        accty = ac;
+    }
+    
+    // Compare accts based on the annual revenue amount.
+    public Integer compareTo(Object compareTo) {
+        // Cast argument to AccoutWrapper
+        AccountWrapper compareToAccty = (AccountWrapper)compareTo;
+        
+        // The return value of 0 indicates that both elements are equal.
+        Integer returnValue = 0;
+        if ((accty.AnnualRevenue == null) && (compareToAccty.accty.AnnualRevenue == null)) {
+            // both wrappers have null AnnualRevenue
+            returnValue = 0;
+        } else if ((accty.AnnualRevenue == null) && (compareToAccty.accty.AnnualRevenue != null)){
+            // nulls-first implementation
+            returnValue = -1;
+        } else if ((accty.AnnualRevenue != null) && (compareToAccty.accty.AnnualRevenue == null)){
+            // nulls-first implementation
+            returnValue = 1;
+        } else if (accty.AnnualRevenue > compareToAccty.accty.AnnualRevenue) {
+            // Set return value to a positive value.
+            returnValue = 1;
+        } else if (accty.AnnualRevenue < compareToAccty.accty.AnnualRevenue) {
+            // Set return value to a negative value.
+            returnValue = -1;
+        } 
+        return returnValue;
+    }
+}
