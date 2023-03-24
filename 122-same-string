@@ -1,0 +1,30 @@
+public static Boolean sameString(String str1, String str2){
+    // solution
+    String newStr1 = '';
+    String newStr2 = '';
+    
+        List<String> lstr1 = str1.split('');
+        List<String> lstr2 = str2.split('');
+    
+    for (Integer i=lstr1.size()-1; i >=0; i--){
+        if (lstr1[i]=='#' && i >= 2){
+            i=i-1;
+            continue;
+        } else {
+            newStr1 = lstr1[i] + newStr1;
+        }
+    }
+    
+    for (Integer i=lstr2.size()-1; i >=0; i--){
+        if (lstr2[i]=='#' && i >= 2){
+            i=i-1;
+            continue;
+        } else {
+            newStr2 = lstr2[i] + newStr2;
+        }
+    }
+    
+    if(newStr1 == newStr2){
+        return true;
+    } else return false;
+}
