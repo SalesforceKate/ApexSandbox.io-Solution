@@ -7,7 +7,7 @@ public static Boolean sameString(String str1, String str2){
     } else reutrn false;
 }
 
-public static String strMod (String str){
+static String strMod (String str){
         // split the string
         List<String> sp = str.split('');
         // initialize string for result and other vars
