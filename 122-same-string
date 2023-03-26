@@ -1,30 +1,29 @@
 public static Boolean sameString(String str1, String str2){
-    // solution
-    String newStr1 = '';
-    String newStr2 = '';
-    
-        List<String> lstr1 = str1.split('');
-        List<String> lstr2 = str2.split('');
-    
-    for (Integer i=lstr1.size()-1; i >=0; i--){
-        if (lstr1[i]=='#' && i >= 2){
-            i=i-1;
-            continue;
-        } else {
-            newStr1 = lstr1[i] + newStr1;
-        }
-    }
-    
-    for (Integer i=lstr2.size()-1; i >=0; i--){
-        if (lstr2[i]=='#' && i >= 2){
-            i=i-1;
-            continue;
-        } else {
-            newStr2 = lstr2[i] + newStr2;
-        }
-    }
-    
-    if(newStr1 == newStr2){
+    str1 = strMod(str1);
+    str2 = strMod(str2);
+        
+    if (str1 == str){
         return true;
-    } else return false;
+    } else reutrn false;
 }
+
+public static String strMod (String str){
+        // split the string
+        List<String> sp = str.split('');
+        // initialize string for result and other vars
+        String result = '';
+        Integer i = 0, countHash = 0;
+        i = sp.size() - 1;
+        while (i >= 0){
+            if (sp.get(i) == '#'){
+                // count the number of #
+                countHash++;
+            } else if (countHash > 0){
+                // if char is not #, decrement countHash
+                countHash--;
+            } else result = sp.get(i) + result;
+            // decrement i
+            i--;
+        }
+    	return result;
+    }
