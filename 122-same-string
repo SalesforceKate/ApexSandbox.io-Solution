@@ -4,10 +4,10 @@ public static Boolean sameString(String str1, String str2){
         
     if (str1 == str){
         return true;
-    } else reutrn false;
+    } else return false;
 }
 
-static String strMod (String str){
+public static String strMod (String str){
         // split the string
         List<String> sp = str.split('');
         // initialize string for result and other vars
