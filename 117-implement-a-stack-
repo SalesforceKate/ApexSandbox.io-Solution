@@ -1,40 +1,28 @@
 public class Stack {
-    private List<Object> items {get; set;}
-    
-    public Stack() {
-        this.items = new List<Object>();
-    }
+    private List<Object> stack = new List<Object>();
     
     public void push(Object obj) {
         //implement push
-        this.items.add(obj);
+        this.stack.add(obj);
     }
     
     public Object pop() {
         //implement pop
-        //if (isEmpty()) {
-        //    throw new StackUnderflowException();
-        //}
-        
-        return this.items.remove(size() - 1);
+        return this.stack.isEmpty() ? null : this.stack.remove(this.stack.size() - 1);
     }
     
     public Integer size() {
         //implement size
-        return this.items.size();
+        return this.stack.size();
     }
     
     public Object peek(){
         //implement peek
-        //if (isEmpty()) {
-        //    throw new StackUnderflowException();
-        //}
-        
-        return this.items.get(size() - 1);
+        return this.stack[this.stack.size() - 1];
     }
     
     public Boolean isEmpty() {
         //implement isEmpty
-        return size() == 0;
+        return this.stack.isEmpty();
     }
 }
