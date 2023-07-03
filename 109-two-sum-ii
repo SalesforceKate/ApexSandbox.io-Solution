@@ -3,7 +3,7 @@ public List<Integer> twoSum(List<Integer> nums, Integer target){
     Integer left = 0;
     Integer right = nums.size() - 1;
     Integer current_sum;
-    List<Integer> result;
+    List<Integer> result = new List<Integer>();
 
 
     while (left < right){
@@ -20,5 +20,5 @@ public List<Integer> twoSum(List<Integer> nums, Integer target){
     }
  
     //No solution found
-    //if (result.size() == 0) return null;
+    return null;
 }
